@@ -49,9 +49,9 @@ key = {
 }
 def checkin():
     
-    # if key.get("xh") == " " or key.get("openid") == " ":
-    #     warning("请配置环境变量")
-    #     exit()
+    if key.get("xh") == " " or key.get("openid") == " ":
+        warning("请配置环境变量")
+        exit()
     key_base64 = base64.b64encode(json.dumps(key).encode('utf-8'))
     post_data = {'key': key_base64.decode('utf-8')}
     result = ""
@@ -61,6 +61,8 @@ def checkin():
     else:
         result = requests.post('https://we.cqu.pt/api/mrdk/post_mrdk_info.php',
                                data=json.dumps(post_data), headers=headers)
+    
+    print(result.content)
     wenchat(result.content)
 
 def wenchat(content):
