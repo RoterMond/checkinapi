@@ -33,5 +33,6 @@ jobs:
         name: ${{secrets.name}}
         addr1: ${{secrets.addr1}}
         addr2: ${{secrets.addr2}} 
-        stutype: ${{secrets.stutype}}  
+        stutype: ${{secrets.stutype}}
+        hookurl: ${{secrets.hookurl}} 
       run: python main.py
