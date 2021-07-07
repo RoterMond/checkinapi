@@ -56,10 +56,10 @@ def checkin():
     post_data = {'key': key_base64.decode('utf-8')}
     result = ""
     if key.get("stutype")=="yjs":
-        result = requests.post('https://we.cqu.pt/api/yjs_mrdk/post_yjs_mrdk_info.php',
+        result = requests.post('https://we.cqupt.edu.cn/api/yjs_mrdk/post_yjs_mrdk_info.php',
                                data=json.dumps(post_data), headers=headers)
     else:
-        result = requests.post('https://we.cqu.pt/api/mrdk/post_mrdk_info.php',
+        result = requests.post('https://we.cqupt.edu.cn/api/mrdk/post_mrdk_info.php',
                                data=json.dumps(post_data), headers=headers)
     
     print(result.content)
